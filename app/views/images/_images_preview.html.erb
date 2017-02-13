@@ -1,15 +1,14 @@
 <% raise "No image" if images.nil? %>
 
-<% images.each do |image| %>
-<div>
-  <%= image_tag image.image_file.url(:thumb) %>
-  <p>
-    <strong>Name:</strong>
-    <%= image.name %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= image.description %>
-  </p>
+<% images.each_with_index do |image,i| %>
+<div class="row featurette">
+  <div class="col-md-7 <%= "col-md-push-5" if i%2 == 0 %>">
+    <h2 class="featurette-heading"><%= image.name %> <span class="text-muted">See for yourself.</span></h2>
+    <p class="lead"><%= image.description %></p>
+  </div>
+  <div class="col-md-5 <%= "col-md-pull-7" if i%2 == 0 %>">
+    <%= image_tag image.image_file.url, class: "featurette-image img-responsive center-block" %>
+  </div>
 </div>
+<hr class="featurette-divider">
 <% end %>
