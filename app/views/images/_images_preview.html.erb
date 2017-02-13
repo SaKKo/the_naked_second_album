@@ -1,0 +1,15 @@
+<% raise "No image" if images.nil? %>
+
+<% images.each do |image| %>
+<div>
+  <%= image_tag image.image_file.url(:thumb) %>
+  <p>
+    <strong>Name:</strong>
+    <%= image.name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= image.description %>
+  </p>
+</div>
+<% end %>

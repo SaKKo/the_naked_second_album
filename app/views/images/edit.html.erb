@@ -1,0 +1,6 @@
+<h1>Editing Image</h1>
+
+<%= render 'form', image: @image %>
+
+<%= link_to 'Show', [@album, @image] %> |
+<%= link_to 'Back', album_images_path(album_id: @album.id) %>

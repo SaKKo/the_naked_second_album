@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @image.image_file.url(:thumb) %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @image.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @image.description %>
+</p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @image.album %>
+</p>
+
+<%= link_to 'Edit', edit_album_image_path(album_id: @album.id id: @image.id) %> |
+<%= link_to 'Back', album_images_path(album_id: @album.id) %>
